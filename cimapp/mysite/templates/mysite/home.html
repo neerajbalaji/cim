@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+        
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" media="all"/>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" media="screen" />
+  
+<head>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span></a>
+      <p class="navbar-text">CIM</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+        <li><a href="/register">Register</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <title>Home</title>
+    <h1>Welcome to Cloud Infra Monitor</h1>
+    <img src="https://lh3.googleusercontent.com/k_MzAEslUVqPwmjfzmdMRjALtzNNmYcU_HyXWgDeeUx03oSvWAfH4yCW75ui-lKtkgI=w300">
+</head>
+<body>
+  <div id="container">
+    <div class="home">
+    {% if user.is_authenticated %}
+    
+    <p>Hello</p>
+    <p>welcome {{ user.username }} ({{ user.email }})</p>
+      
+    <p><a href="/logout">Logout</a></p>
+    {% else %}
+    
+    <!--<div class="headers"href="/login">Login</div>-->
+      <a href="/login" class="headers">Login</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      <a href="/register" class="headers">Register</a>
+    </div>
+    
+</div>
+</div>
+    {% endif %}
+</body>
+</html>

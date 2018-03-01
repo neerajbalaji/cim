@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <form method="POST" class="login">
+        {% csrf_token %}
+        <!--<p>
+            <label>Username</label>
+            <input type="text" name="username">
+        </p>
+        <p>
+            <label>Password</label>
+            <input type="password" name="password">
+        </p>
+        <button type="submit">Login</button>-->
+        
+    <h1>CIM Login</h1>
+    <input type="username" name="username" class="login-input" placeholder="username" autofocus>
+    <input type="password" name="password" class="login-input" placeholder="Password">
+    <input type="submit" value="Login" class="login-submit">
+    <p class="login-help"><a href="/">Forgot password?</a></p>
+
+    {% if form.errors %}
+    <div class=" label label-danger">
+        Your username and password didn't match. 
+        Please try again.
+    </div>
+{% endif %}
+</body>
+</html>
