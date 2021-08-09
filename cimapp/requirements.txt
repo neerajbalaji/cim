@@ -15,7 +15,7 @@ mccabe==0.6.1
 pylint==1.8.2
 pyodbc==4.0.22
 pytz==2018.3
-pywin32==222
+pywin32==301
 requests==2.18.4
 screen==1.0.1
 singledispatch==3.4.0.3
